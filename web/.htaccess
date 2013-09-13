@@ -9,7 +9,7 @@
     RewriteRule ^(.*)$ http://www.lorem.zonemsi.com/$1 [R=301,L]
 
     RewriteCond %{HTTP_HOST} ^www\.lorem\.zonemsi\.com$ [NC]
-    RewriteRule ^$ http://www.lorem.zonemsi.com/fr/ [R=301,L]
+    RewriteRule ^$ http://www.lorem.zonemsi.com/ [R=301,L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ app.php [QSA,L]
