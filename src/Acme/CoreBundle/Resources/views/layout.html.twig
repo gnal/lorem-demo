@@ -1,0 +1,71 @@
+{% extends 'MsiAdminBundle:Page:layout.html.twig' %}
+
+{% block css %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ asset('bundles/msiadmin/css/base.css') }}">
+<style type="text/css">
+    body {
+        padding-top: 40px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+</style>
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+{#<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('homepage') }}">{{ site.translation.brand }}</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            {{ knp_menu_render('AcmeCoreBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
+        </div>
+    </div>
+</nav>#}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="well">
+                {{ knp_menu_render('AcmeCoreBundle:MenuBuilder:sidebarMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% if page.showTitle %}
+                <h2>{{ page.translation.title }}</h2>
+            {% endif %}
+            {{ msi_block_render('content_top', page) }}
+            {{ block('page_content') }}
+            {{ msi_block_render('content_bottom', page) }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <p><small class="muted">&copy; {{ 'now'|date('Y') }} {{ site.translation.brand }}</small></p>
+        </div>
+        <div class="col-md-6">
+            {{ msi_block_render('footer', page) }}
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+{{ parent() }}
+{% endblock %}

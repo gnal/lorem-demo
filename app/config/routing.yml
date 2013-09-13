@@ -1,8 +1,10 @@
+acme_core:
+    resource: "@AcmeCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 homepage:
-    pattern:  /{_locale}/
-    defaults: { _controller: DadaDadaBundle:Home:index }
-    requirements:
-        _locale: fr|en
+    pattern:  /
+    defaults: { _controller: AcmeCoreBundle:Home:home }
 
 # fos_user
 
