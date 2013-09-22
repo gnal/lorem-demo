@@ -7,51 +7,73 @@
 <link rel="stylesheet" href="{{ asset('bundles/msiadmin/css/base.css') }}">
 <style type="text/css">
     body {
-        padding-top: 40px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 0;
     }
 
     h2 {
-        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 34px;
+    }
+
+    .breadcrumb {
+        background: none;
+        padding: 0;
     }
 </style>
 {{ parent() }}
 {% endblock %}
 
 {% block body %}
-{#<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top">
     <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <span class="sr-only">Toggle navigation</span>
+                <span class="icon-large icon-reorder"></span>
             </button>
-            <a class="navbar-brand" href="{{ path('homepage') }}">{{ site.translation.brand }}</a>
+            <a class="navbar-brand" href="#">{{ site.translation.brand }}</a>
         </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            {{ knp_menu_render('AcmeCoreBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
-        </div>
+        {{ knp_menu_render('AcmeCoreBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
+        <p class="navbar-text navbar-right" style="margin-right: -15px;"><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'english' : 'français' }}</a></p>
+        </div><!-- /.navbar-collapse -->
     </div>
-</nav>#}
-
+</nav>
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <div class="well">
-                {{ knp_menu_render('AcmeCoreBundle:MenuBuilder:sidebarMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
-            </div>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
             {% if page.showTitle %}
-                <h2>{{ page.translation.title }}</h2>
+                <h2 class="text-muted">{{ page.translation.title }}</h2>
             {% endif %}
-            {{ msi_block_render('content_top', page) }}
-            {{ block('page_content') }}
-            {{ msi_block_render('content_bottom', page) }}
+        </div>
+        <div class="col-md-4">
+            <form class="form-inline" method="GET" action="{{ path('msi_search_search_search') }}">
+                <div class="input-group" style="margin-bottom: 0;">
+                    <input name="q" type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><span class="icon-search icon-large"></span></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+    <hr>
+    {#<div class="col-md-3">
+        <div class="well">
+            {{ knp_menu_render('AcmeCoreBundle:MenuBuilder:sidebarMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
+        </div>
+    </div>#}
+    {{ msi_block_render('content_top', page) }}
+    {{ block('page_content') }}
+    {{ msi_block_render('content_bottom', page) }}
     <hr>
     <div class="row">
         <div class="col-md-6">

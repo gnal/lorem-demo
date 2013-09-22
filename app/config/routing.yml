@@ -1,10 +1,16 @@
+msi_search:
+    resource: "@MsiSearchBundle/Resources/config/routing.yml"
+    prefix:   /
+
 acme_core:
     resource: "@AcmeCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
 homepage:
-    pattern:  /
+    pattern:  /{_locale}/
     defaults: { _controller: AcmeCoreBundle:Home:home }
+    requirements:
+        _locale: fr|en
 
 # fos_user
 
@@ -34,7 +40,7 @@ msi_admin_loader:
     type: msi_admin
 
 msi_admin:
-    resource: "@MsiAdminBundle/Resources/config/routing/routing.yml"
+    resource: "@MsiAdminBundle/Resources/config/routing.yml"
     prefix: /
 
 msi_cms:

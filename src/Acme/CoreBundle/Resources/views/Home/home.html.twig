@@ -1,1 +1,18 @@
 {% extends 'AcmeCoreBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="well">
+            <p class="lead" style="font-size: 30px;"><span class="icon-time icon-large"></span>&nbsp;{{ played }}</p>
+            HOURS WORKED
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="well">
+            <p class="lead" style="font-size: 30px;"><span class="icon-coffee icon-large"></span>&nbsp;{{ cups }}</p>
+            CUPS OF COFFEE INGURGITATED
+        </div>
+    </div>
+</div>
+{% endblock %}
