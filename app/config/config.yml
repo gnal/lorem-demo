@@ -56,6 +56,7 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+        naming_strategy: msi_admin.doctrine.orm.naming_strategy
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -74,9 +75,11 @@ fos_user:
     registration:
         form:
             type: msi_user_registration
+            validation_groups: [Default]
     profile:
         form:
             type: msi_user_profile
+            validation_groups: [Default]
     change_password:
         form:
             type: msi_user_change_password

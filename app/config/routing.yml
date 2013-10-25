@@ -1,6 +1,6 @@
 msi_search:
     resource: "@MsiSearchBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
 
 acme_core:
     resource: "@AcmeCoreBundle/Resources/config/routing.yml"
@@ -41,8 +41,6 @@ msi_admin_loader:
 
 msi_admin:
     resource: "@MsiAdminBundle/Resources/config/routing.yml"
-    prefix: /
 
 msi_cms:
     resource: "@MsiCmsBundle/Resources/config/routing.yml"
-    prefix: /
