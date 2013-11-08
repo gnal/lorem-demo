@@ -1,0 +1,17 @@
+parameters:
+#    buzo_core.example.class: Buzo\CoreBundle\Example
+
+services:
+
+    # Qtvr
+    buzo_core_qtvr_admin:
+        class: Buzo\CoreBundle\Admin\QtvrAdmin
+        arguments: [ @buzo_core.qtvr_manager ]
+        parent: msi_admin.admin
+        tags:
+            - { name: msi.admin }
+
+    buzo_core.qtvr_manager:
+        class: %msi_admin.manager.class%
+        arguments: [ Buzo\CoreBundle\Entity\Qtvr ]
+        parent: msi_admin.manager

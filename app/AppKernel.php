@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new Acme\UserBundle\AcmeUserBundle(),
             new Acme\CoreBundle\AcmeCoreBundle(),
             new Acme\SearchBundle\AcmeSearchBundle(),
+            new Buzo\CoreBundle\BuzoCoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

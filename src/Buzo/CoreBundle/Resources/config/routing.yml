@@ -1,0 +1,3 @@
+buzo_core_qtvr_show:
+    pattern:  /qtvr/{secret}
+    defaults: { _controller: BuzoCoreBundle:Qtvr:show }

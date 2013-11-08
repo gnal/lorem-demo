@@ -1,0 +1,11 @@
+html {
+    overflow-y: scroll;
+}
+
+.container {
+    max-width: 970px;
+}
+
+object {
+    display: block;
+}

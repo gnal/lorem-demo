@@ -1,9 +1,5 @@
-msi_search:
-    resource: "@MsiSearchBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-
-acme_core:
-    resource: "@AcmeCoreBundle/Resources/config/routing.yml"
+buzo_core:
+    resource: "@BuzoCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
 homepage:
