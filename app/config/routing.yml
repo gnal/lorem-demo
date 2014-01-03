@@ -1,6 +1,6 @@
-buzo_core:
-    resource: "@BuzoCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+msi_search:
+    resource: "@MsiSearchBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
 
 homepage:
     pattern:  /{_locale}/
