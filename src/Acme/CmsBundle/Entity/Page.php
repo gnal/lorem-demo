@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Msi\CmsBundle\Model\Page as BasePage;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Acme\CmsBundle\Entity\PageRepository")
  */
 class Page extends BasePage
 {
