@@ -7,10 +7,6 @@ msi_search:
     resource: "@MsiSearchBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/
 
-acme_core:
-    resource: "@AcmeCoreBundle/Resources/config/routing.yml"
-    prefix:   /
-
 homepage:
     pattern:  /{_locale}/
     defaults: { _controller: AcmeCoreBundle:Home:home }
