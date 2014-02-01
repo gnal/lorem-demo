@@ -11,7 +11,7 @@
         { "type": "vcs", "url": "https://github.com/gnal/KekCmsBundle.git" },
         { "type": "vcs", "url": "https://github.com/gnal/MsiSearchBundle.git" },
         { "type": "vcs", "url": "https://github.com/gnal/MsiBaseBundle.git" },
-        { "type": "vcs", "url": "https://github.com/gnal/MsiUserBundle.git" }
+        { "type": "vcs", "url": "https://github.com/gnal/KekUserBundle.git" }
     ],
     "require": {
         "php": ">=5.3.3",

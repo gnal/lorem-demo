@@ -88,6 +88,8 @@ msi_cms:
     page_class: Acme\CmsBundle\Entity\Page
     page_layouts:
         'AcmeCoreBundle::layout.html.twig': 'Default'
+    block_slots:
+        'content_bottom': 'content_bottom'
 
 msi_search:
     entities:
