@@ -1,11 +1,6 @@
-hex_main:
-    resource: "@MsiCmsBundle/Controller"
-    type: annotation
-    prefix: /admin
-
 msi_search:
     resource: "@MsiSearchBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    prefix:   /{_locale}
 
 homepage:
     pattern:  /{_locale}/
@@ -43,5 +38,9 @@ msi_admin_loader:
 msi_admin:
     resource: "@MsiAdminBundle/Resources/config/routing.yml"
 
+# msi_cms:
+#     resource: "@MsiCmsBundle/Resources/config/routing.yml"
+
 msi_cms:
-    resource: "@MsiCmsBundle/Resources/config/routing.yml"
+    resource: "@MsiCmsBundle/Controller"
+    type: annotation

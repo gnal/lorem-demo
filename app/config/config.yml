@@ -66,6 +66,11 @@ swiftmailer:
     password:  %mailer_password%
     spool:     { type: memory }
 
+jms_di_extra:
+    locations:
+        all_bundles: true
+        directories: ["%kernel.root_dir%/../src"]
+
 fos_user:
     db_driver: orm
     firewall_name: main

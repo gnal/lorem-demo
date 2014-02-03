@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Msi\UserBundle\Model\User as BaseUser;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Msi\AdminBundle\Entity\EntityRepository")
  */
 class User extends BaseUser
 {
