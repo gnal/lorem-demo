@@ -10,7 +10,6 @@
         { "type": "vcs", "url": "https://github.com/gnal/KekAdminBundle.git" },
         { "type": "vcs", "url": "https://github.com/gnal/KekCmsBundle.git" },
         { "type": "vcs", "url": "https://github.com/gnal/MsiSearchBundle.git" },
-        { "type": "vcs", "url": "https://github.com/gnal/MsiBaseBundle.git" },
         { "type": "vcs", "url": "https://github.com/gnal/KekUserBundle.git" }
     ],
     "require": {
@@ -36,7 +35,6 @@
         "msi/admin-bundle": "dev-master",
         "msi/cms-bundle": "dev-master",
         "msi/search-bundle": "dev-master",
-        "msi/base-bundle": "dev-master",
         "msi/user-bundle": "dev-master"
     },
     "scripts": {

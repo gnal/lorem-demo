@@ -25,7 +25,6 @@ class AppKernel extends Kernel
             new Msi\AdminBundle\MsiAdminBundle(),
             new Msi\CmsBundle\MsiCmsBundle(),
             new Msi\UserBundle\MsiUserBundle(),
-            new Msi\BaseBundle\MsiBaseBundle(),
             new Msi\SearchBundle\MsiSearchBundle(),
 
             new Acme\AppBundle\AcmeAppBundle(),
