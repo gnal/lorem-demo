@@ -11,28 +11,26 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 class LoadSiteData extends AbstractFixture implements ContainerAwareInterface, OrderedFixtureInterface
 {
     protected $container;
-    protected $siteManager;
 
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
-        $this->siteManager = $container->get('msi_cms.site_manager');
     }
 
     public function load(ObjectManager $manager)
     {
-        $site = $this->siteManager->create();
+        $class = $this->container->getParameter('msi_cms.site.class');
+        $site = new $class;
         $site->setHost('dev.acme.com');
-        $site->setEnabled(true);
         $site->setIsDefault(true);
         $site->setLocale('fr');
-        $site->setLocales(array(
+        $site->setLocales([
             'fr', 'en',
-        ));
+        ]);
         $this->addReference('site1', $site);
-        $manager->persist($site);
+        $this->container->get('doctrine')->getManager()->persist($site);
         // FLUSH
-        $manager->flush();
+        $this->container->get('doctrine')->getManager()->flush();
     }
 
     public function getOrder()
